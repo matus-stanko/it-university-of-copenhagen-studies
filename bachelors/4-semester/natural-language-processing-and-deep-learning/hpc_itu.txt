@@ -1,0 +1,11 @@
+- info o cpu.gppu
+sinfo -o "%P %n %c %G %D %t"
+
+- Poziadat o node s GPU
+salloc -p gpu -t 02:00:00 --gres=gpu:1 --cpus-per-task=8 --mem=32G
+
+- Poziadat o node
+srun --time=02:00:00 --cpus-per-task=8 --mem=32G --pty bash
+
+
+ 

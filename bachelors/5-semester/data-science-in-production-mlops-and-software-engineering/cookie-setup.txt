@@ -1,0 +1,13 @@
+1.) PIX install
+2.) Cookie-cutter install
+pipx install cookiecutter-data-science
+3.) init structure
+ccds
+4.) init, commit a push na GITHUB
+git init
+git add .
+git commit -m ''
+# create github repo and copy link
+git remote add origin 'link to repo'
+# set na main branch (nepamatam, ale ukaaze ho pri ggit push)
+git push

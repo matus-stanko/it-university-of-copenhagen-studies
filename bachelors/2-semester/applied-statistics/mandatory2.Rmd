@@ -1,0 +1,255 @@
+---
+title: "Mandatory Assignment 2"
+subtitle: "Applied Statistics, IT University of Copenhagen"
+author: Matus Stanko
+output:
+  pdf_document: default
+documentclass: article
+classoption: a4paper
+---
+
+# Case 4.
+A classical dataset contains data on body weight and heart weight for 97
+male cats and 47 female cats (Fisher, 1947). The dataset cats is available in
+the MASS package for R. It contains the variables Sex (sex of the cat), Bwt (body
+weight in kilograms), and Hwt (heart weight in grams).
+
+## 1. 
+Use the following commands to make and attach a dataset, males, with
+the data for male cats only:
+```{r warning=FALSE}
+library(MASS)
+males <- subset(cats, Sex=="M") # select from cats only where Sex is M (Male)
+attach(males)
+```
+
+## 2. 
+Run the command: 
+```{r}
+summary(lm(Hwt~Bwt))
+```
+It seems like linear regression model,the dependent variable (Hwt/Bwt) is regressed on a single predictor variable (Bwt):
+\[
+\beta_0 + \beta_1 \cdot Bwt + \epsilon
+\]
+Where: 
+$\beta_0$ is intercept coefficitien = -1.1841   
+$\beta_1$ is coeffictient for variable Bwt = 4.3127   
+$\epsilon$ is error   
+
+
+the slope parameter of 4.3127 means that for every unit increase in bodyweight the expected ratio of heartweight to bodyweight increases by approximately 4.3127 units.
+The slope is possitive, so line representing expected ratios will be growing (the higher the body weight, the higher the expeted heart weight)  
+
+## 3.
+Make a scatter plot of the data and add the estimated regression line
+with the abline() function
+```{r}
+
+#Fit lin. regression
+fit <- lm(Hwt ~ Bwt)
+
+#Create scatter plot graph
+plot(Bwt, Hwt, 
+     main = "Scatter Plot",
+     xlab = "Body weights(kg)", 
+     ylab = "Heart weights(g)",  
+     col = "black",            
+     pch = 16)                
+
+#Draw regression line
+abline(fit, col = "red",lwd = 2)
+```
+
+## 4.      
+Compute the 95% confidence interval for the intercept parameter and
+for the slope parameter.
+Consider intercept parameter as 0.    
+\[
+y_i = \beta \cdot x_i + \epsilon_i
+\]
+```{r}
+confint(fit)
+
+```
+This command will give us 2 confidence intervals, first row (intercept) is calculating confidence interval without intercept [-3.16;0.79] and [3.63;4.98] meaning that I am 95% sure that true value of these parameters are in these intervals.    
+
+While considering intercept (intercept = 0), the model will look like this:
+\[
+  y_i = \beta \cdot x_i + e_i
+\]
+This could be better fit for our data, since logicaly if body weight is 0, then heart weight must be 0. So this could better aprox. the regression model
+
+## 5. 
+Use one of the confidence intervals from question 4 to explain why this
+is a reasonable model for the cat data.
+
+Lets take option with intercept = 0. This means that regression line will be crossing the origin[0,0].   
+The regression model (line) will tell me that: If bodyweight is 0, then also heartweight is 0. This makes sense.The confidence interval without intercept [-3.16;0.79] includes number 0 so it is possible that true parameter is 0, however It does not have to be. But In this case it make sense to use intercept = 0.    
+Also true value of slope is possitive (based on 95\% CI), I know that regression line is growing, meaning that: heartweight is growing with bodyweight.       
+
+
+## 6.
+In order to derive the least squares estimate of $\beta$, the function: \[
+Q(\beta) = \sum_{i=1}^n (y_i - \beta \cdot x_i)^2
+\]
+should be minimalized. Show that $Q(\beta)$ is the smallest possible for :\[
+\beta = \hat{\beta} = \frac{\sum_{i=1}^{n}x_i \cdot y_i}{\sum_{i=1}^n x_i^2}
+\]
+
+\[
+Q(\beta) = \sum_{i=1}^n (y_i - \beta \cdot x_i)^2
+\]
+Solve for Beta: Derivate with respect to $\beta$  
+\[
+\frac{\partial }{\partial \beta} Q(\beta) = \sum_{i=1}^n 2 \cdot (y_i - \beta \cdot x_i) \cdot \frac{\partial }{\partial \beta}(y_i - \beta \cdot x_i)
+\]
+\[
+\frac{\partial }{\partial \beta} Q(\beta) = \sum_{i=1}^n 2 \cdot (y_i - \beta \cdot x_i) \cdot (-x_i) = -2\sum_{i=1}^n \cdot (y_i - \beta \cdot x_i) \cdot x_i 
+\]
+Now set it = to 0 
+\[
+-2 \sum_{i=1}^n y_i \cdot x_i - \beta\sum_{i=1}^nx_i^2 = 0 \text{  multiply by} -\frac{1}{2} 
+\]
+\[
+\sum_{i=1}^n y_i \cdot x_i - \beta\sum_{i=1}^nx_i^2 = 0
+\]
+\[
+\sum_{i=1}^n y_i \cdot x_i  = \beta\sum_{i=1}^nx_i^2 
+\]
+\[
+\beta = \frac{\sum_{i=1}^n y_i \cdot x_i } {\sum_{i=1}^nx_i^2} = \hat{\beta}
+\]
+## 7.
+ Compute $\hat{\beta}$ for the cat data (use the sum() function).
+
+```{r}
+#For male cats
+numerator <- sum(Bwt * Hwt)
+denominator <- sum(Bwt^2)
+beta_hat <- numerator / denominator
+
+print(beta_hat)
+
+#For all cats 
+numerator_all <- sum(cats$Bwt * cats$Hwt)
+denominator_all <- sum(Bwt^2)
+beta_hat_all <- numerator / denominator
+
+```
+## 8.
+Run the following command and recognize the value of $\hat{\beta}$ in the output:
+
+```{r}
+summary(lm(Hwt~Bwt-1))
+
+```
+I can see estimate of $\beta$ 3.91461, that is the same as my calculations using sum
+
+## 9.
+Add the new fitted regression line to the plot from question 3. You may
+use another color or another line type; try, for example, one of the options col=”red” or lty=2 to abline().
+```{r}
+fit_no_intercept <- lm(Hwt~Bwt-1) #-1 means no intercept
+
+#Create scatter plot graph
+plot(Bwt, Hwt, 
+     main = "Scatter Plot",
+     xlab = "Body weights(kg)", 
+     ylab = "Heart weights(g)",  
+     col = "black",            
+     pch = 16)                
+
+#Regression line n.1
+abline(fit, col = "red",lwd = 2)
+#Regression line n.2 
+abline(fit_no_intercept, col ="purple",lty = 5)
+```
+
+## 10.
+Compute an estimate for the expected heart weight for a random cat
+with body weight 2.5 kilograms.
+
+```{r}
+
+body_weight <- 2.5
+
+# Expected heart weight using regression model without intercept
+expected_heart_weight <- beta_hat * body_weight
+
+print(expected_heart_weight)
+```
+So expected heart weight for cat with Bwt of 2.5kg, is 9.78g
+
+
+## 11. 
+Find $SE(\hat{\beta})$ in the output from question 8 and use it to compute the 95\%
+confidence interval for $\beta$ without the use of the confint() function.
+
+\[
+CI = \hat{\beta} \pm t_{0.975,n-p} \cdot SE(\hat{\beta})
+\]
+Where:    
+$\hat{\beta}$ is $\beta$ estimate,    
+$t$ is critical value,    
+$p$  is the number of predictors (in this case only slope = 1)    
+```{r}
+#variables known for male cats
+SE = 0.05393
+n = 97 #or 2 <- length(Hwt)
+
+#Degree of freedom
+## formula is n-p. N = 97 and p = s the number of predictors. Since I got SE from lm(formula = Hwt ~ Bwt - 1), where -1 means no intercept, p = 1 (just slope estimator)
+degree_of_freedom = n-1
+
+alpha <- 0.05
+
+t_critical <- abs(qt(1 - alpha / 2, degree_of_freedom))
+
+#Using formula
+low_CI = beta_hat - t_critical * SE
+upp_CI = beta_hat + t_critical * SE
+
+print(paste("CI is: [",low_CI,"; ",upp_CI,"]"))
+
+```
+So true value of $\beta$ with SE=0.05393 will be in CI with 95\%
+
+## 12. 
+Use confint() to compute the same confidence intervals. Compare it
+to the confidence interval for the slope parameter from question 4.
+```{r}
+fit <- lm(Hwt ~ Bwt - 1)
+conf_interval <- confint(fit, level = 0.95)
+
+# Print the confidence intervals
+print(conf_interval)
+```
+Confidence interval got in question 12 [3.80;4.02] is more narrow what interval in question 4 [3.63;4.98], in question 4 I did conf. intervals with 2 paramaters - slope and intercept, however in question 12 only slope. This brings additional uncertainty because I am estimating 2 parameters that made confidence interval wider. 
+
+## 13. 
+```{r}
+t.test(Hwt/Bwt)
+```
+Statistical model is One Sample t-test (determines whether the mean of a sample differs significantly from a specific
+value), we are testing the ratio of heart weight to body weight of cats.
+  
+The estimated mean x represents mean value of this sample data. So Hwt/Bwt    
+
+Difference between one sample t-test and linear regression model without intercept:
+a.) Linear regression model without intercept:
+Fits a regression line through origin [0,0]. Coefficients represent the slope of the line, so how much response variable changes for change in predictor variable.   
+
+b.) Compares the mean of sample to population mean, and deciding if the sample mean differs (significantly) from population mean. Using t-value and p-value.
+
+
+
+This mandatory assignment helped me understand when and why not to use an intercept in linear regression models. By not using the intercept, I gained insights into obtaining more precise confidence intervals, which are showing where the true parameter is most likely to lie.
+
+
+
+
+
+
+
+

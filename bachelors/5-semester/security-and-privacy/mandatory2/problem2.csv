@@ -1,0 +1,151 @@
+age,sex,region,num_children,citizenship,criminal_record
+35,female,Region of Southern Denmark,0,Danish,no
+48,female,Region of Southern Denmark,0,Danish,yes
+65,female,North Jutland Region,1,Danish,no
+18,female,Region of Southern Denmark,1,Other EU,no
+51,male,Region Zealand,0,Danish,no
+53,male,North Jutland Region,1,Danish,no
+30,female,Mid Jutland Region,3,Danish,yes
+31,female,Region Zealand,2,Danish,no
+30,male,Region Zealand,0,Other EU,yes
+23,male,Region of Southern Denmark,0,Danish,no
+32,female,Region of Southern Denmark,0,Danish,no
+21,female,Capital City Region,0,Danish,no
+26,male,North Jutland Region,0,Danish,yes
+43,male,Capital City Region,0,Danish,no
+62,male,Region Zealand,0,Danish,no
+40,female,Mid Jutland Region,1,Danish,no
+31,female,Region of Southern Denmark,0,Other EU,no
+23,male,Region of Southern Denmark,1,Non-EU,no
+24,male,North Jutland Region,0,Danish,no
+93,female,Mid Jutland Region,1,Danish,no
+45,female,North Jutland Region,0,Other EU,no
+32,male,North Jutland Region,1,Danish,no
+33,male,Region of Southern Denmark,0,Other EU,no
+52,male,North Jutland Region,1,Danish,no
+27,male,Region Zealand,1,Danish,no
+30,male,North Jutland Region,2,Danish,yes
+54,female,North Jutland Region,0,Danish,no
+21,male,Capital City Region,1,Danish,no
+42,male,Mid Jutland Region,0,Danish,no
+22,female,Region of Southern Denmark,1,Danish,no
+65,female,Region Zealand,0,Danish,no
+32,male,North Jutland Region,0,Danish,no
+27,female,North Jutland Region,0,Danish,no
+31,male,North Jutland Region,1,Danish,no
+26,male,Mid Jutland Region,2,Danish,yes
+35,female,Mid Jutland Region,0,Other EU,no
+18,male,Mid Jutland Region,1,Other EU,no
+32,male,Mid Jutland Region,0,Danish,no
+36,female,North Jutland Region,1,Danish,no
+32,female,Region Zealand,1,Danish,no
+72,male,Region of Southern Denmark,1,Danish,no
+20,male,Mid Jutland Region,0,Danish,no
+24,female,Mid Jutland Region,1,Danish,no
+36,female,Region of Southern Denmark,0,Danish,no
+21,female,Region Zealand,0,Danish,no
+22,female,Capital City Region,0,Danish,no
+19,male,North Jutland Region,0,Danish,no
+34,male,North Jutland Region,0,Danish,no
+31,male,Region Zealand,2,Danish,no
+32,female,North Jutland Region,0,Other EU,yes
+22,male,Capital City Region,0,Danish,yes
+30,female,North Jutland Region,0,Danish,no
+19,female,Region Zealand,0,Danish,no
+21,male,Region Zealand,1,Danish,no
+39,male,North Jutland Region,1,Danish,no
+54,female,Region Zealand,0,Danish,no
+77,female,Region Zealand,1,Danish,no
+26,female,Region of Southern Denmark,0,Danish,no
+76,female,Capital City Region,1,Other EU,no
+18,male,North Jutland Region,0,Danish,no
+56,female,Region of Southern Denmark,1,Non-EU,no
+96,male,Region Zealand,0,Danish,no
+41,male,Region of Southern Denmark,1,Danish,no
+28,female,Mid Jutland Region,0,Danish,no
+42,male,Mid Jutland Region,0,Danish,no
+79,female,Region of Southern Denmark,1,Danish,no
+18,male,North Jutland Region,0,Danish,no
+71,male,Mid Jutland Region,1,Danish,no
+70,male,Capital City Region,0,Danish,no
+49,female,Region Zealand,1,Other EU,no
+42,female,Region of Southern Denmark,0,Danish,no
+32,female,North Jutland Region,0,Non-EU,no
+34,female,Mid Jutland Region,0,Non-EU,no
+56,female,Capital City Region,0,Danish,no
+85,male,Region of Southern Denmark,0,Non-EU,no
+39,male,Capital City Region,0,Danish,no
+31,female,Region Zealand,1,Danish,no
+27,female,Mid Jutland Region,0,Danish,no
+47,female,Region of Southern Denmark,0,Danish,no
+35,male,Capital City Region,0,Danish,no
+38,female,Region of Southern Denmark,2,Non-EU,no
+38,male,Mid Jutland Region,1,Danish,yes
+31,female,Region Zealand,0,Danish,no
+38,male,Mid Jutland Region,0,Danish,yes
+60,male,Region Zealand,0,Danish,no
+57,female,Mid Jutland Region,1,Danish,no
+54,male,Region of Southern Denmark,0,Danish,no
+34,female,Capital City Region,0,Danish,no
+38,male,Capital City Region,0,Other EU,no
+35,male,Capital City Region,0,Danish,no
+41,male,Region Zealand,0,Danish,no
+47,male,North Jutland Region,0,Danish,no
+78,male,Capital City Region,0,Danish,no
+63,female,Region of Southern Denmark,1,Danish,no
+32,male,Region of Southern Denmark,0,Danish,no
+49,male,Capital City Region,0,Danish,no
+18,male,North Jutland Region,0,Other EU,no
+60,male,Capital City Region,0,Danish,no
+62,female,Region Zealand,0,Danish,yes
+87,female,Region of Southern Denmark,1,Other EU,no
+51,male,Capital City Region,1,Danish,no
+32,female,Capital City Region,2,Danish,no
+43,female,North Jutland Region,0,Other EU,no
+31,female,Region Zealand,1,Danish,no
+25,female,Mid Jutland Region,1,Danish,yes
+46,female,Capital City Region,0,Other EU,no
+23,male,Capital City Region,0,Danish,no
+46,female,Region of Southern Denmark,1,Danish,yes
+49,female,Capital City Region,0,Danish,no
+41,male,Mid Jutland Region,0,Danish,no
+38,male,Mid Jutland Region,1,Other EU,no
+28,female,Capital City Region,0,Danish,no
+19,female,Region of Southern Denmark,0,Danish,no
+60,male,North Jutland Region,2,Danish,no
+42,female,Mid Jutland Region,0,Danish,no
+59,male,Mid Jutland Region,2,Danish,no
+34,male,Region of Southern Denmark,1,Other EU,no
+46,female,Region Zealand,1,Danish,no
+56,female,Region Zealand,0,Non-EU,no
+41,female,North Jutland Region,2,Danish,no
+38,male,North Jutland Region,2,Danish,no
+26,female,Mid Jutland Region,0,Danish,no
+85,female,Region of Southern Denmark,0,Danish,no
+58,male,Region of Southern Denmark,1,Danish,no
+80,female,Capital City Region,0,Danish,no
+44,female,Region of Southern Denmark,0,Danish,no
+29,female,Region Zealand,1,Other EU,no
+28,male,North Jutland Region,2,Other EU,no
+29,male,Mid Jutland Region,0,Danish,no
+47,male,North Jutland Region,0,Non-EU,yes
+63,female,Region Zealand,0,Danish,no
+47,male,Capital City Region,0,Danish,no
+35,female,Region of Southern Denmark,0,Danish,no
+56,male,Capital City Region,2,Danish,no
+25,male,Mid Jutland Region,0,Danish,no
+34,female,Mid Jutland Region,2,Danish,no
+35,female,Mid Jutland Region,0,Danish,no
+19,male,Capital City Region,0,Non-EU,no
+61,male,Region Zealand,2,Danish,no
+29,female,North Jutland Region,1,Danish,no
+35,male,Region Zealand,2,Danish,no
+71,male,Mid Jutland Region,0,Other EU,no
+55,male,Capital City Region,1,Danish,no
+40,male,North Jutland Region,0,Danish,yes
+53,female,North Jutland Region,0,Non-EU,no
+50,female,North Jutland Region,0,Danish,no
+77,female,Region of Southern Denmark,0,Danish,no
+48,female,Region of Southern Denmark,0,Danish,no
+53,male,North Jutland Region,1,Danish,no
+49,female,Capital City Region,0,Danish,no
